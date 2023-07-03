@@ -11,6 +11,17 @@ jobs:
       matrix:
         config:
         - {
+            name: "ARM-Release",
+            os: windows-2019,
+            cmake_opts: "-A ARM \
+              -DALSOFT_TESTS=ON \
+              -DALSOFT_BUILD_ROUTER=ON \
+              -DALSOFT_REQUIRE_WINMM=ON \
+              -DALSOFT_REQUIRE_DSOUND=ON \
+              -DALSOFT_REQUIRE_WASAPI=ON",
+            build_type: "Release"
+          }
+        - {
             name: "Win32-Release",
             os: windows-latest,
             cmake_opts: "-A Win32 \
